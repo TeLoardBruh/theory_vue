@@ -1,4 +1,4 @@
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app_1">
   <h1 ref="heading">{{ title }}</h1>
@@ -6,8 +6,13 @@
   <p v-if="showParagraph">This is not always visible</p>
 </div>
 <div id="app_2">
-  <h1 ref="heading">{{ title }}</h1>
+  <h1 ref="heading" ref="heading">{{ title }}</h1>
   <button v-on:click="onChange">Click to change app_1 title</button>
-  
+</div>
+<!-- creating element using template in js -->
+<div id="app_3">
+</div>
+<div id="components-demo">
+  <hello></hello>
 </div>
 <script src="app.js"></script>

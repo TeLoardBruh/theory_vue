@@ -1,3 +1,4 @@
+
 var vm1 = new Vue({
   el: '#app_1',
   data: {
@@ -35,7 +36,27 @@ var vm2 = new Vue({
   methods:{
     // trying to connect function to change something in the app_1
     onChange: function(){
-      vm1.title = 'from app_2 change app_1'
+      vm1.title = 'from app_2 change app_1';
+      // this is how to get value from the DOM
+      console.log(this.$refs.heading.innerText);
     }
   }
 })
+
+// mouting is working as el it is best for usinng as pom for the app 
+// vm1.$mount('#app_1) for example
+console.log(vm2.$refs.heading.innerText);
+
+var vm3 = new Vue({
+  template: '<h1>Hello world</h1>'
+})
+
+
+// componets create is to use later 
+vm3.$mount('#app_3');
+
+Vue.component('hello', {
+
+    template: '<div>Hello</div>',
+  })
+new Vue({ el: '#components-demo' })
