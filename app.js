@@ -55,8 +55,14 @@ var vm3 = new Vue({
 // componets create is to use later 
 vm3.$mount('#app_3');
 
-Vue.component('hello', {
-
-    template: '<div>Hello</div>',
+Vue.component('my-com', {
+  data:function(){
+    return{
+     message: 'Hello Vue.js!'
+    }
+  },
+  template: '<li>{{message}}</li>'
+})
+new Vue({
+  el:'#app_component',
   })
-new Vue({ el: '#components-demo' })
